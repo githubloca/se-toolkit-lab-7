@@ -3,6 +3,7 @@
 <h2>Table of contents</h2>
 
 - [What is a coding agent](#what-is-a-coding-agent)
+- [Using a coding agent efficiently](#using-a-coding-agent-efficiently)
 - [Choose a coding agent](#choose-a-coding-agent)
 - [Set up `Qwen Code`-based agent](#set-up-qwen-code-based-agent)
   - [Set up `Qwen Code`](#set-up-qwen-code)
@@ -13,6 +14,12 @@
 ## What is a coding agent
 
 A coding agent lets you use LLMs to help you complete your tasks.
+## Use a coding agent efficiently and effectively
+
+Give your [coding agent](#what-is-a-coding-agent):
+
+- focused and actionable [prompts](./llm.md#prompts) that explain in detail what you want to achieve;
+- relevant [context](./llm.md#context) that fits the [context window](./llm.md#context-window) of the underlying [model](./llm.md#model).
 
 ## Choose a coding agent
 
