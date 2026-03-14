@@ -127,9 +127,11 @@ The file must be non-empty.
 
 1. [Connect to the VM](./ssh.md#connect-to-the-vm).
 
-2. [Install `pnpm`](./nodejs.md#install-pnpm).
+2. [Install `Node.js`](./nodejs.md#install-nodejs).
 
-3. To install [`Qwen Code`](#what-is-qwen-code),
+3. [Install `pnpm`](./nodejs.md#install-pnpm).
+
+4. To install [`Qwen Code`](#what-is-qwen-code),
 
    [run in the `VS Code Terminal`](./vs-code.md#run-a-command-in-the-vs-code-terminal):
 
@@ -137,13 +139,13 @@ The file must be non-empty.
    pnpm add -g @qwen-code/qwen-code
    ```
 
-4. [Open a chat with `Qwen Code` using the CLI](#open-a-chat-with-qwen-code-using-the-cli).
+5. [Open a chat with `Qwen Code` using the CLI](#open-a-chat-with-qwen-code-using-the-cli).
 
-5. Write `/auth` in the chat to [authenticate via Qwen OAuth](https://github.com/QwenLM/qwen-code?tab=readme-ov-file#authentication).
+6. Write `/auth` in the chat to [authenticate via Qwen OAuth](https://github.com/QwenLM/qwen-code?tab=readme-ov-file#authentication).
 
-6. Open the link in a browser to complete the authentication procedure.
+7. Open the link in a browser to complete the authentication procedure.
 
-7. [Quit the chat with `Qwen Code`](#quit-the-chat-with-qwen-code).
+8. [Quit the chat with `Qwen Code`](#quit-the-chat-with-qwen-code).
 
 ## Set up the `Qwen Code` API (REMOTE)
 
