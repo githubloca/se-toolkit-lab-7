@@ -38,7 +38,7 @@ Non-root users can only access [files](./file-system.md#file) and run [programs]
 
 See:
 
-- [Create a non-root user](./linux-administration.md#create-a-non-root-user).
+- [Set up login as the non-root user `<user>`](./vm-non-root.md).
 
 ## Group
 

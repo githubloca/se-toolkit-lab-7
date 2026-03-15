@@ -11,7 +11,6 @@
     - [Change the owner and group (recursive)](#change-the-owner-and-group-recursive)
 - [Get my current user](#get-my-current-user)
 - [The `sudo` command](#the-sudo-command)
-- [Create a non-root user](#create-a-non-root-user)
 - [Inspect ports](#inspect-ports)
   - [See listening TCP ports](#see-listening-tcp-ports)
   - [Inspect a specific port](#inspect-a-specific-port)
@@ -97,47 +96,6 @@ To run a command with elevated permissions,
 ```terminal
 sudo <command>
 ```
-
-## Create a non-root user
-
-[The user `root`](./linux.md#the-user-root) is useful for initial setup, but daily work should be done with a regular user.
-
-For `Ubuntu`/`Debian` systems:
-
-1. To create a new user,
-
-   [run in the `VS Code Terminal`](./vs-code.md#run-a-command-in-the-vs-code-terminal):
-
-   ```terminal
-   sudo adduser <user>
-   ```
-
-2. To allow the user to run administrative commands,
-
-   [run in the `VS Code Terminal`](./vs-code.md#run-a-command-in-the-vs-code-terminal):
-
-   ```terminal
-   sudo usermod -aG sudo <user>
-   ```
-
-3. To switch to that user,
-
-   [run in the `VS Code Terminal`](./vs-code.md#run-a-command-in-the-vs-code-terminal):
-
-   ```terminal
-   su - <user>
-   ```
-
-4. To verify the current user,
-
-   [run in the `VS Code Terminal`](./vs-code.md#run-a-command-in-the-vs-code-terminal):
-
-   ```terminal
-   whoami
-   id
-   ```
-
-If you plan to log in via `SSH` as that user, copy `authorized_keys` to the new user's home and fix permissions before logging out from `root`.
 
 ## Inspect ports
 
