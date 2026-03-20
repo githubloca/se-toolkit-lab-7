@@ -1,5 +1,5 @@
 nohup: ignoring input
-Network Retry Loop (Bootstrap Initialize Application): Timed out: Timed out. Failed run number 0 of 0. Aborting.
+No error handlers are registered, logging exception.
 Traceback (most recent call last):
   File "/root/se-toolkit-lab-7/bot/.venv/lib/python3.14/site-packages/httpx/_transports/default.py", line 101, in map_httpcore_exceptions
     yield
@@ -76,26 +76,41 @@ httpx.ConnectTimeout
 The above exception was the direct cause of the following exception:
 
 Traceback (most recent call last):
-  File "/root/se-toolkit-lab-7/bot/.venv/lib/python3.14/site-packages/telegram/ext/_utils/networkloop.py", line 161, in network_retry_loop
-    await do_action()
-  File "/root/se-toolkit-lab-7/bot/.venv/lib/python3.14/site-packages/telegram/ext/_utils/networkloop.py", line 136, in do_action
-    await action_cb()
-  File "/root/se-toolkit-lab-7/bot/.venv/lib/python3.14/site-packages/telegram/ext/_application.py", line 489, in initialize
-    await self.bot.initialize()
-  File "/root/se-toolkit-lab-7/bot/.venv/lib/python3.14/site-packages/telegram/ext/_extbot.py", line 316, in initialize
-    await super().initialize()
-  File "/root/se-toolkit-lab-7/bot/.venv/lib/python3.14/site-packages/telegram/_bot.py", line 857, in initialize
-    await self.get_me()
-  File "/root/se-toolkit-lab-7/bot/.venv/lib/python3.14/site-packages/telegram/ext/_extbot.py", line 2008, in get_me
-    return await super().get_me(
-           ^^^^^^^^^^^^^^^^^^^^^
-    ...<5 lines>...
+  File "/root/se-toolkit-lab-7/bot/.venv/lib/python3.14/site-packages/telegram/ext/_application.py", line 1315, in process_update
+    await coroutine
+  File "/root/se-toolkit-lab-7/bot/.venv/lib/python3.14/site-packages/telegram/ext/_handlers/basehandler.py", line 159, in handle_update
+    return await self.callback(update, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/se-toolkit-lab-7/bot/bot.py", line 11, in tg_start
+    await update.message.reply_text(response)
+  File "/root/se-toolkit-lab-7/bot/.venv/lib/python3.14/site-packages/telegram/_message.py", line 2106, in reply_text
+    return await self.get_bot().send_message(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<21 lines>...
     )
     ^
-  File "/root/se-toolkit-lab-7/bot/.venv/lib/python3.14/site-packages/telegram/_bot.py", line 990, in get_me
+  File "/root/se-toolkit-lab-7/bot/.venv/lib/python3.14/site-packages/telegram/ext/_extbot.py", line 3118, in send_message
+    return await super().send_message(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<23 lines>...
+    )
+    ^
+  File "/root/se-toolkit-lab-7/bot/.venv/lib/python3.14/site-packages/telegram/_bot.py", line 1123, in send_message
+    return await self._send_message(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<21 lines>...
+    )
+    ^
+  File "/root/se-toolkit-lab-7/bot/.venv/lib/python3.14/site-packages/telegram/ext/_extbot.py", line 630, in _send_message
+    result = await super()._send_message(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<23 lines>...
+    )
+    ^
+  File "/root/se-toolkit-lab-7/bot/.venv/lib/python3.14/site-packages/telegram/_bot.py", line 820, in _send_message
     result = await self._post(
              ^^^^^^^^^^^^^^^^^
-    ...<6 lines>...
+    ...<7 lines>...
     )
     ^
   File "/root/se-toolkit-lab-7/bot/.venv/lib/python3.14/site-packages/telegram/_bot.py", line 704, in _post
@@ -131,7 +146,7 @@ Traceback (most recent call last):
   File "/root/se-toolkit-lab-7/bot/.venv/lib/python3.14/site-packages/telegram/request/_httpxrequest.py", line 296, in do_request
     raise TimedOut from err
 telegram.error.TimedOut: Timed out
-Starting Telegram bot... (real mode)
+No error handlers are registered, logging exception.
 Traceback (most recent call last):
   File "/root/se-toolkit-lab-7/bot/.venv/lib/python3.14/site-packages/httpx/_transports/default.py", line 101, in map_httpcore_exceptions
     yield
@@ -208,52 +223,41 @@ httpx.ConnectTimeout
 The above exception was the direct cause of the following exception:
 
 Traceback (most recent call last):
-  File "/root/se-toolkit-lab-7/bot/bot.py", line 38, in <module>
-    main()
-    ~~~~^^
-  File "/root/se-toolkit-lab-7/bot/bot.py", line 35, in main
-    application.run_polling()
-    ~~~~~~~~~~~~~~~~~~~~~~~^^
-  File "/root/se-toolkit-lab-7/bot/.venv/lib/python3.14/site-packages/telegram/ext/_application.py", line 839, in run_polling
-    return self.__run(
-           ~~~~~~~~~~^
-        updater_coroutine=self.updater.start_polling(
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    ...<9 lines>...
-        close_loop=close_loop,
-        ^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/se-toolkit-lab-7/bot/.venv/lib/python3.14/site-packages/telegram/ext/_application.py", line 1315, in process_update
+    await coroutine
+  File "/root/se-toolkit-lab-7/bot/.venv/lib/python3.14/site-packages/telegram/ext/_handlers/basehandler.py", line 159, in handle_update
+    return await self.callback(update, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/se-toolkit-lab-7/bot/bot.py", line 15, in tg_help
+    await update.message.reply_text(response)
+  File "/root/se-toolkit-lab-7/bot/.venv/lib/python3.14/site-packages/telegram/_message.py", line 2106, in reply_text
+    return await self.get_bot().send_message(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<21 lines>...
     )
     ^
-  File "/root/se-toolkit-lab-7/bot/.venv/lib/python3.14/site-packages/telegram/ext/_application.py", line 1054, in __run
-    loop.run_until_complete(self._bootstrap_initialize(max_retries=bootstrap_retries))
-    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/root/.local/share/uv/python/cpython-3.14.2-linux-x86_64-gnu/lib/python3.14/asyncio/base_events.py", line 719, in run_until_complete
-    return future.result()
-           ~~~~~~~~~~~~~^^
-  File "/root/se-toolkit-lab-7/bot/.venv/lib/python3.14/site-packages/telegram/ext/_application.py", line 1014, in _bootstrap_initialize
-    await network_retry_loop(
-    ...<4 lines>...
-    )
-  File "/root/se-toolkit-lab-7/bot/.venv/lib/python3.14/site-packages/telegram/ext/_utils/networkloop.py", line 161, in network_retry_loop
-    await do_action()
-  File "/root/se-toolkit-lab-7/bot/.venv/lib/python3.14/site-packages/telegram/ext/_utils/networkloop.py", line 136, in do_action
-    await action_cb()
-  File "/root/se-toolkit-lab-7/bot/.venv/lib/python3.14/site-packages/telegram/ext/_application.py", line 489, in initialize
-    await self.bot.initialize()
-  File "/root/se-toolkit-lab-7/bot/.venv/lib/python3.14/site-packages/telegram/ext/_extbot.py", line 316, in initialize
-    await super().initialize()
-  File "/root/se-toolkit-lab-7/bot/.venv/lib/python3.14/site-packages/telegram/_bot.py", line 857, in initialize
-    await self.get_me()
-  File "/root/se-toolkit-lab-7/bot/.venv/lib/python3.14/site-packages/telegram/ext/_extbot.py", line 2008, in get_me
-    return await super().get_me(
-           ^^^^^^^^^^^^^^^^^^^^^
-    ...<5 lines>...
+  File "/root/se-toolkit-lab-7/bot/.venv/lib/python3.14/site-packages/telegram/ext/_extbot.py", line 3118, in send_message
+    return await super().send_message(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<23 lines>...
     )
     ^
-  File "/root/se-toolkit-lab-7/bot/.venv/lib/python3.14/site-packages/telegram/_bot.py", line 990, in get_me
+  File "/root/se-toolkit-lab-7/bot/.venv/lib/python3.14/site-packages/telegram/_bot.py", line 1123, in send_message
+    return await self._send_message(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<21 lines>...
+    )
+    ^
+  File "/root/se-toolkit-lab-7/bot/.venv/lib/python3.14/site-packages/telegram/ext/_extbot.py", line 630, in _send_message
+    result = await super()._send_message(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<23 lines>...
+    )
+    ^
+  File "/root/se-toolkit-lab-7/bot/.venv/lib/python3.14/site-packages/telegram/_bot.py", line 820, in _send_message
     result = await self._post(
              ^^^^^^^^^^^^^^^^^
-    ...<6 lines>...
+    ...<7 lines>...
     )
     ^
   File "/root/se-toolkit-lab-7/bot/.venv/lib/python3.14/site-packages/telegram/_bot.py", line 704, in _post
