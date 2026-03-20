@@ -3,7 +3,7 @@ import sys
 import asyncio
 from telegram import Update
 from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes
-from handlers.start import start_handler, help_handler
+from handlers.commands.start import start_handler, help_handler
 import config
 
 async def tg_start(update: Update, context: ContextTypes.DEFAULT_TYPE):
