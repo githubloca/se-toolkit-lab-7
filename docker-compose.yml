@@ -89,6 +89,19 @@ services:
     volumes:
       - ./caddy/Caddyfile:/etc/caddy/Caddyfile
 
+  bot:
+    build: ./bot
+    container_name: lms-bot
+    restart: unless-stopped
+    env_file:
+      - .env.docker.secret
+    depends_on:
+      - backend
+    networks:
+      - lms-network
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
 volumes:
   postgres_data:
 
